@@ -33,6 +33,8 @@ Contributions are welcome! Feel free to open issues or submit pull requests to c
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+## Image
+
 ![Screenshot 2024-03-13 235927](https://github.com/Framework12/BytePulse/assets/74595185/ec93a5e9-ef50-4c28-8617-a19715bc08c1)
 
 
