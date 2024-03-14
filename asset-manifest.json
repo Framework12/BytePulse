@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/BytePulse/static/css/main.f184509e.css",
+    "main.js": "/BytePulse/static/js/main.898154d0.js",
+    "static/media/logo.png": "/BytePulse/static/media/logo.5705c1cdd4c02fb02332.png",
+    "index.html": "/BytePulse/index.html",
+    "main.f184509e.css.map": "/BytePulse/static/css/main.f184509e.css.map",
+    "main.898154d0.js.map": "/BytePulse/static/js/main.898154d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f184509e.css",
+    "static/js/main.898154d0.js"
+  ]
+}
