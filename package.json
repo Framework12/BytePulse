@@ -1,5 +1,6 @@
 {
-  "name": "techblog",
+  "homepage": "https://Framework12.github.io/BytePulse",
+  "name": "BytePulse",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,11 +12,14 @@
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
-    "typewriter-effect": "^2.21.0",
+    "react-switch": "^7.0.0",
+    "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

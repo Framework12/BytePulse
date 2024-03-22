@@ -1,0 +1,223 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  position: absolute;
+left:10px;
+  max-width: 150px;
+  top: 17px;}
+
+  .heading {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .heading h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 30px; 
+    border-radius: 20px;
+    background-color: #3d3d3d;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: auto;
+  }
+  
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.article-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(26, 43, 196, 0.315);
+  overflow: hidden;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card img {
+  max-width: 95%;
+  height: auto;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+.article-card img:hover {
+  transform: scale(1.1);
+  max-width: 99%;
+  box-shadow: 0 4px 6px rgb(19, 93, 122);
+}
+
+.article-card-content {
+  padding: 20px;
+}
+
+.article-card h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  margin: 20px;
+}
+
+.article-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.news-button {
+  margin-left: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.news-button:hover {
+  background-color: #0056b3;
+}
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .active:hover {
+  box-shadow: 0 0 10px rgba(26, 43, 196, 0.562);
+}
+
+.published-info {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: 10px;
+}
+
+.highlight {
+  color: #ff5733;
+  padding: 10px;
+}
+.publisher {
+  padding: 10px;
+  margin-top: 5px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 15%; 
+    top: 0%;
+  }
+
+  .heading {
+font-size: 22px;
+  }
+
+  .heading h1 {
+    font-size: 30px;
+  }
+
+  .article-card {
+    padding: 10px;
+  }
+
+  .article-card img {
+    max-width: 90%;
+    padding-left: 10px;
+  }
+
+  .news-button {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 20%; 
+    top: 0%;
+  }
+
+  .heading h1{
+    font-size: 18px;
+    width: 230px;
+    height: 45px;
+    position: relative;
+    top: 30px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 257px) {
+.heading h1{
+
+  font-size: 12px;
+  margin:  0 auto;
+  text-align: center;
+  padding: 5px;
+  width: 140px;
+  height: 50px;
+  left: 40px;
+}
+}

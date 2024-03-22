@@ -1,0 +1,43 @@
+.Bookmark {
+  position: relative;
+}
+
+.bookmark-button {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  margin: 8px;
+  z-index: 1;
+}
+
+.bookmark-button button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.bookmark-button button svg {
+  width: 24px;
+  height: 24px;
+  color: #888;
+}
+
+.bookmark-button button:hover svg {
+  color: #ff6347;
+}
+
+.bookmarks-button {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.bookmarks-button svg {
+  font-size: 24px;
+  color: #ff6347;
+}

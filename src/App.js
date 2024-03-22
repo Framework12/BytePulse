@@ -1,11 +1,29 @@
 import React from "react";
-import NewsApp from "./News";
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NewsApp from "./components/News/News";
+import Footer from "./components/Footer/Footer";
+import BookmarkList from "./components/Bookmark/BookmarkList.jsx"; 
+import USNews from "./components/Us India Page/USnews.jsx";
+import IndiaNews from "./components/Us India Page/IndiaNews.jsx";
+import Sidebar from "./components/SideBar/Sidebar.jsx"
+import "./App.css";
+
 const App = () => {
   return (
-    <div> 
-      <NewsApp />
-    </div>
+    <Router>
+      <div className="app">
+      <Sidebar />
+        <div className="content">
+          <Routes>
+            <Route path="/home" element={<NewsApp />} /> 
+            <Route path="/bookmarks" element={<BookmarkList />} /> 
+            <Route path="/us" element={<USNews />} />
+            <Route path="/india" element={<IndiaNews />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
