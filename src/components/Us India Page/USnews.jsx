@@ -3,37 +3,39 @@ import { Link } from "react-router-dom";
 import "../News/NewsApp.css";
 import ScrollToTopButton from "../Scroll/Scroll";
 import Bookmark from "../Bookmark/Bookmark";
-import logo from "../Assets/logo.png"
+import logo from "../Assets/logo.png";
 import defaultImage from "../Assets/default.png";
 
 const USNews = () => {
   const [articles, setArticles] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const bottomBoundaryRef = useRef(null);
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=bb34979c0b6443a089b396b13b91d803`
-        );
-        const result = await response.json();
+  const fetchNews = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=2cd73e01c88d486395a8347cfd26d603`
+      );
+      const result = await response.json();
+      console.log("API Response:", result);
+      if (result.articles && Array.isArray(result.articles)) {
         setArticles((prevArticles) => [...prevArticles, ...result.articles]);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching news:", error);
-        setLoading(false);
+      } else {
+        console.error("Articles data is not an array:", result.articles);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching news:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchNews();
-  }, [currentPage]);
+  }, []);
 
-  const handleSeeNews = (url) => window.open(url, "_blank");
-
-  const handleImageClick = (url) => window.open(url, "_blank");
+  const handleOpenLink = (url) => window.open(url, "_blank");
 
   const renderArticles = () => {
     return articles.map((article, index) => (
@@ -41,22 +43,18 @@ const USNews = () => {
         <Bookmark article={article} />
         <h2>{article.title}</h2>
         <div className="article-card-content">
-          {article.urlToImage ? (
-            <img
-              src={article.urlToImage}
-              alt={article.title}
-              onClick={() => handleImageClick(article.url)}
-              className="article-image"
-            />
-          ) : (
-            <img src={defaultImage} alt="Default" className="default-image" />
-          )}
+          <img
+            src={article.urlToImage || defaultImage}
+            alt={article.title || "Default"}
+            onClick={() => handleOpenLink(article.url)}
+            className="article-image"
+          />
           <p>{article.description}</p>
         </div>
         <div className="card-action">
           <button
             className="news-button"
-            onClick={() => handleSeeNews(article.url)}
+            onClick={() => handleOpenLink(article.url)}
           >
             Read More
           </button>
@@ -79,24 +77,22 @@ const USNews = () => {
   const handleScroll = useCallback(() => {
     if (
       bottomBoundaryRef.current &&
-      bottomBoundaryRef.current.getBoundingClientRect().top <= window.innerHeight
+      bottomBoundaryRef.current.getBoundingClientRect().top <= window.innerHeight &&
+      !loading
     ) {
-      if (!loading) {
-        setCurrentPage((prevPage) => prevPage + 1);
-      }
+      fetchNews();
     }
-  }, [bottomBoundaryRef, loading]);
+  }, [loading]);
 
   useEffect(() => {
-    const scrollHandler = () => handleScroll();
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   return (
     <div className="container">
       <header className="heading">
-      <Link to="/home">
+        <Link to="/home">
           <img src={logo} alt="Logo" className="logo" />
         </Link>
         <h1>Top US Tech News</h1>

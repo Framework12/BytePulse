@@ -1,0 +1,20 @@
+.menuBurger {
+    width: 3vmax;
+    height: 4vmax;
+    position: absolute;
+    top: 2vmax;
+    left: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    cursor: pointer;
+    padding: 1vmax;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.logoReactNavbar {
+    width: 120% !important;
+}
+

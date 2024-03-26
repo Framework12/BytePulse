@@ -101,25 +101,8 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    top: 0;
-    border-radius: 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 0;
-  }
-
-  .sidebar-content {
-    padding: 10px;
-  }
-
-  .menu-icon {
-    padding: 10px;
-  }
-
-  .collapsed .menu-icon {
-    padding: 10px;
+  display: none;
   }
 }
