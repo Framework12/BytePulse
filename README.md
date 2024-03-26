@@ -39,3 +39,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 
 
+![Screenshot 2024-03-26 17![Screenshot 2024-03-26 175102](https://github.com/Framework12/BytePulse/assets/74595185/83e58e1b-fed9-4392-899e-01c97bc6ea99)
+5001](https://github.com/Framework12/BytePulse/assets/74595185/601f7782-f273-4787-a669-0e9ce6e510a4)
+
+![Screenshot 2024-03-26 175031](https://github.com/Framework12/BytePulse/assets/74595185/b7b33644-2be7-42d9-8ba4-12056fde41e6)
+
